@@ -1,0 +1,66 @@
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Random;
+import java.awt.*;
+
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
+
+public class ex1 extends JFrame {
+private JPanel contentPane;
+private JTextField tf ;
+private JButton btn_start;
+private JPanel life1;
+private JPanel life2;
+private JPanel life3;
+private JLabel level;
+private JList list;
+
+private String[] game_LV=
+{ "level 1", "level 2", "level 3", "level 4", "level 5", "level 6", "level 7" };
+public ex1(){
+	setTitle("자바 게임 좀 시작하자");
+	setSize(600,600);
+	setDefaultCloseOperation(EXIT_ON_CLOSE);
+	getContentPane().setLayout(null);
+	Container c = getContentPane();
+	c.setLayout(null);
+
+	
+    tf = new JTextField();
+	tf.setBounds(100,300, 267, 38);
+    c.add(tf);
+    
+    list = new JList(game_LV);// 레벨 리스트 보여주기
+	list.setSelectedIndex(0);
+	list.setFont(new Font("굴림", Font.BOLD, 22));
+	list.setBounds(386, 44, 162, 280);
+	c.add(list);
+	
+	btn_start = new JButton("시작");// 시작 버튼
+	btn_start.setFont(new Font("굴림", Font.BOLD, 23));
+	btn_start.setBounds(160, 387, 105, 38);
+	c.add(btn_start);
+    
+	setVisible(true);//실행 필요 요소 모음.
+
+	
+}
+public static void main(String[] args) {
+	 ex1 ex=new ex1();
+	
+
+}
+}
